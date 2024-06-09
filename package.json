@@ -7,13 +7,15 @@
         "ios": "react-native run-ios",
         "lint": "eslint .",
         "start": "react-native start",
-        "test": "jest"
+        "test": "jest",
+        "clean-yarn": "rm -rf node_modules && yarn install"
     },
     "dependencies": {
         "apisauce": "^3.0.1",
         "react": "18.2.0",
         "react-native": "0.74.2",
-        "react-native-reanimated": "^3.4.2"
+        "react-native-reanimated": "^3.4.2",
+        "react-native-ultimate-config": "^6.0.0"
     },
     "devDependencies": {
         "@babel/core": "^7.20.0",
