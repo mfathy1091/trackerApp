@@ -1,4 +1,5 @@
 import { apiGetTransactions } from '@api/apiClient';
+import ExpenseTile from '@components/ExpenseTile';
 import React, { useEffect, useState } from 'react';
 import { Text, TouchableOpacity, View } from 'react-native';
 
@@ -22,8 +23,8 @@ const ExpensesListScreen: React.FC = () => {
 
     return (
         <View>
-            {transactions.map((transaction, i) => (
-                <Text key={i}>{transaction.amount}</Text>
+            {transactions?.map((transaction, i) => (
+                <ExpenseTile key={i} transaction={transaction} />
             ))}
 
             <TouchableOpacity onPress={() => fetchData()} style={{ height: 50, width: 100, backgroundColor: 'red' }}>
