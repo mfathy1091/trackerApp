@@ -1,9 +1,9 @@
 import { StyleSheet } from 'react-native';
 
 const color = {
-    green: '#15C585',
+    green: '#0CAE77',
     darkGreen: '#137651',
-    errorRed: '#e71010',
+    red: '#F01C1C',
     failingRed: '#E45151',
     white: '#fdfdfd',
     strokeButton: '#ececec',
