@@ -14,4 +14,10 @@ const apiGetTransactions = async () => {
     return response;
 };
 
-export { apiGetTransactions };
+const apiGetAccounts = async () => {
+    const response = await api.get('/accounts');
+    console.log('apiGetAccounts Response : ', response);
+    return response;
+};
+
+export { apiGetAccounts, apiGetTransactions };
