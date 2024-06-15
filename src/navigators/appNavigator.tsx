@@ -2,7 +2,7 @@ import React from 'react';
 
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import HomeScreen from './home/screens/Home';
+import HomeNavigator from './home/homeNavigator';
 
 const Stack = createNativeStackNavigator();
 const AppNavigator = () => {
@@ -15,8 +15,8 @@ const AppNavigator = () => {
                 gestureDirection: 'horizontal',
                 gestureResponseDistance: { start: 0, end: 20 },
             })}
-            initialRouteName="HomeStack">
-            <Stack.Screen name="HomeStack" component={HomeScreen} />
+            initialRouteName="HomeNavigator">
+            <Stack.Screen name="HomeNavigator" component={HomeNavigator} />
         </Stack.Navigator>
     );
 };

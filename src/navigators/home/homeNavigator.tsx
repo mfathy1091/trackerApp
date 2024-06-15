@@ -1,25 +1,17 @@
 import React from 'react';
 
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 
-import HomeScreen from '@homeNav/screens/Home';
+import HomeScreen from './screens/Home';
 
-const Stack = createNativeStackNavigator();
+const Drawer = createDrawerNavigator();
 
 const HomeNavigator = () => {
     return (
         <>
-            <Stack.Navigator
-                screenOptions={() => ({
-                    headerShown: false,
-                    animation: 'none',
-                    gestureEnabled: true,
-                    gestureDirection: 'horizontal',
-                    gestureResponseDistance: { start: 0, end: 20 },
-                })}
-                initialRouteName="Home">
-                <Stack.Screen name="Home" component={HomeScreen} />
-            </Stack.Navigator>
+            <Drawer.Navigator initialRouteName="RecordsList">
+                <Drawer.Screen name="Home" component={HomeScreen} />
+            </Drawer.Navigator>
         </>
     );
 };
