@@ -20,4 +20,10 @@ const apiGetAccounts = async () => {
     return response;
 };
 
-export { apiGetAccounts, apiGetTransactions };
+const apiGetCategories = async () => {
+    const response = await api.get('/categories');
+    console.log('apiGetCategories Response : ', response);
+    return response;
+};
+
+export { apiGetAccounts, apiGetCategories, apiGetTransactions };
