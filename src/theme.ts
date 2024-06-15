@@ -6,12 +6,15 @@ const color = {
     red: '#F01C1C',
     failingRed: '#E45151',
     white: '#fdfdfd',
+    offWhite: '#C5E5F8',
     strokeButton: '#ececec',
-    grey: '#cbcbcb',
+    lightGrey: '#cbcbcb',
+    grey: '#808080',
     darkGrey: '#676870',
-    black: '#3c3c3b',
+    black: '#2A2A2A',
     earthyRed: '#C9897C',
     moderateBlue: '#5B8CB7',
+    darkBlue: '#0D47A1',
 };
 
 const font = {
@@ -23,16 +26,6 @@ const font = {
     },
 };
 
-const size = {
-    TITLE: 30,
-    XXL: 20,
-    XL: 16,
-    L: 15,
-    M: 14,
-    S: 12,
-    XS: 10,
-};
-
 const icon = {
     active: '#15c585',
     white: '#fff',
@@ -41,55 +34,55 @@ const icon = {
 
 const text = StyleSheet.create({
     headerTitle: {
-        fontSize: size.TITLE,
+        fontSize: 30,
         fontFamily: font.quicksand.bold,
     },
     accountHeaderTitle: {
-        fontSize: size.XXL,
+        fontSize: 20,
         fontFamily: font.quicksand.medium,
         textAlign: 'center',
     },
     inputText: {
-        fontSize: size.XL,
+        fontSize: 16,
         fontFamily: font.quicksand.regular,
     },
     cardTextBold: {
-        fontSize: size.L,
+        fontSize: 15,
         fontFamily: font.quicksand.semiBold,
     },
     buttonText: {
-        fontSize: size.L,
+        fontSize: 15,
         fontFamily: font.quicksand.bold,
     },
     cardText: {
-        fontSize: size.L,
+        fontSize: 15,
         fontFamily: font.quicksand.medium,
     },
     underlineText: {
-        fontSize: size.L,
+        fontSize: 15,
         fontFamily: font.quicksand.regular,
         textDecorationLine: 'underline',
     },
     accountTitle: {
-        fontSize: size.L,
+        fontSize: 15,
         fontFamily: font.quicksand.regular,
     },
     paragraph: {
-        fontSize: size.M,
+        fontSize: 14,
         fontFamily: font.quicksand.medium,
     },
     paragraphBold: {
-        fontSize: size.M,
+        fontSize: 14,
         fontFamily: font.quicksand.bold,
     },
     smallTitle: {
-        fontSize: size.S,
+        fontSize: 12,
         fontFamily: font.quicksand.medium,
     },
     smallText: {
-        fontSize: size.S,
+        fontSize: 12,
         fontFamily: font.quicksand.regular,
     },
 });
 
-export default { color, text, size, font, icon };
+export default { color, text, font, icon };
