@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import FastImage from 'react-native-fast-image';
 import theme from '../theme';
 
-const ExpenseTile = ({ transaction }) => {
+const ExpenseTile = ({ transaction, last = false }) => {
     let color;
     let amountText = `EGP ${transaction.amount}`;
     switch (transaction?.type) {
@@ -37,7 +37,7 @@ const ExpenseTile = ({ transaction }) => {
                     <Text style={styles.date}>{transaction?.date}</Text>
                 </View>
             </View>
-            <View style={styles.separator}></View>
+            {!last && <View style={styles.separator} />}
         </View>
     );
 };
