@@ -3,7 +3,7 @@ import GearIcon from '@icons/gear.svg';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import theme from 'theme';
-import HomeExpensesCard from './HomeExpensesCard';
+import HomeExpensesCard from '../components/HomeExpensesCard';
 
 const HomeScreen: React.FC = () => {
     return (
