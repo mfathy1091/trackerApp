@@ -1,7 +1,8 @@
 import AccountsList from '@components/AccountsList';
 import GearIcon from '@icons/gear.svg';
+import PlusIcon from '@icons/plus.svg';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import theme from 'theme';
 import HomeExpensesCard from '../components/HomeExpensesCard';
 
@@ -18,6 +19,9 @@ const HomeScreen: React.FC = () => {
             <View style={styles.cardContainer}>
                 <HomeExpensesCard />
             </View>
+            <TouchableOpacity style={styles.addButton}>
+                <PlusIcon width={50} height={50} />
+            </TouchableOpacity>
         </View>
     );
 };
@@ -47,6 +51,11 @@ const styles = StyleSheet.create({
         fontSize: 18,
         fontFamily: theme.font.quicksand.regular,
         color: theme.color.black,
+    },
+    addButton: {
+        position: 'absolute',
+        bottom: 15,
+        right: 15,
     },
 });
 
