@@ -3,6 +3,7 @@ import GearIcon from '@icons/gear.svg';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import theme from 'theme';
+import HomeExpensesCard from './HomeExpensesCard';
 
 const HomeScreen: React.FC = () => {
     return (
@@ -13,6 +14,9 @@ const HomeScreen: React.FC = () => {
                     <GearIcon />
                 </View>
                 <AccountsList />
+            </View>
+            <View style={styles.cardContainer}>
+                <HomeExpensesCard />
             </View>
         </View>
     );
@@ -27,6 +31,10 @@ const styles = StyleSheet.create({
     },
     accountsContainer: {
         backgroundColor: 'white',
+    },
+    cardContainer: {
+        marginHorizontal: 7,
+        marginTop: 10,
     },
     titleContainer: {
         height: 50,
