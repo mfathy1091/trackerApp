@@ -1,3 +1,4 @@
+import Button from '@components/Button';
 import CustomTextInput from '@components/CustomTextInput';
 import SingleSelect from '@components/SingleSelect';
 import { useGetAccounts, useGetCategories } from 'queries/expenseQuery';
@@ -66,6 +67,7 @@ const AddRecordScreen: React.FC = () => {
                     />
                 )}
             />
+            <Button title="Save" onPress={() => {}} />
         </View>
     );
 };
