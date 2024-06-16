@@ -1,20 +1,18 @@
+import { useGetCategories } from 'queries/expenseQuery';
 import React from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { StyleSheet, View } from 'react-native';
 import SingleSelect from '../components/SingleSelect';
 
 const AddRecordScreen: React.FC = () => {
-    const options = [
-        { name: 'Food', option: 'food' },
-        { name: 'Transportation', option: 'transportation' },
-    ];
-
     const { control } = useForm<FormData>({
         mode: 'all',
         defaultValues: {
             category: '',
         },
     });
+
+    const categoriesQuery = useGetCategories();
 
     return (
         <View>
@@ -25,8 +23,8 @@ const AddRecordScreen: React.FC = () => {
                     <SingleSelect
                         title={'Category'}
                         selectedKey={value}
-                        options={options}
-                        fields={{ key: 'option', text: 'name' }}
+                        options={categoriesQuery?.data?.data}
+                        fields={{ key: 'slug', text: 'name' }}
                         onChangeSelection={onChange}
                     />
                 )}

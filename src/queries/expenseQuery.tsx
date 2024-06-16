@@ -1,7 +1,5 @@
-import { apiGetTransactions } from '@api/apiClient';
-import { useQuery, useQueryClient } from '@tanstack/react-query';
-
-const queryClient = useQueryClient();
+import { apiGetCategories, apiGetTransactions } from '@api/apiClient';
+import { useQuery } from '@tanstack/react-query';
 
 const useGetTransactions = () => {
     return useQuery({
@@ -10,4 +8,11 @@ const useGetTransactions = () => {
     });
 };
 
-export { useGetTransactions };
+const useGetCategories = () => {
+    return useQuery({
+        queryFn: apiGetCategories,
+        queryKey: ['categories'],
+    });
+};
+
+export { useGetCategories, useGetTransactions };
