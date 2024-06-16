@@ -1,24 +1,14 @@
-import { apiGetTransactions } from '@api/apiClient';
 import ExpenseTile from '@components/ExpenseTile';
-import React, { useEffect, useState } from 'react';
+import { useGetTransactions } from 'queries/expenseQuery';
+import React from 'react';
 import { View } from 'react-native';
 
 const ExpensesList: React.FC = () => {
-    const [transactions, setTransactions] = useState([{}]);
-
-    useEffect(() => {
-        fetchData();
-    }, []);
-
-    const fetchData = async () => {
-        const response = await apiGetTransactions();
-        const data = await response.data;
-        setTransactions(data);
-    };
+    const transactionsQuery = useGetTransactions();
 
     return (
         <View>
-            {transactions?.map((transaction, i) => (
+            {transactionsQuery?.data?.data?.map((transaction, i) => (
                 <ExpenseTile key={i} transaction={transaction} />
             ))}
         </View>
