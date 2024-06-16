@@ -3,9 +3,9 @@ import { Pressable, StyleSheet, Text, View } from 'react-native';
 
 import DownArrow from '@icons/down-arrow.svg';
 
+import BottomSheet from '@components/BottomSheet';
+import SelectTile from '@components/SelectTile';
 import theme from 'theme';
-import BottomSheet from './BottomSheet';
-import SelectTile from './SelectTile';
 
 interface Props {
     title: string;

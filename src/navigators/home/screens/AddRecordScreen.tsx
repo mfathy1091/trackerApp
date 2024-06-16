@@ -1,9 +1,9 @@
 import CustomTextInput from '@components/CustomTextInput';
+import SingleSelect from '@components/SingleSelect';
 import { useGetAccounts, useGetCategories } from 'queries/expenseQuery';
 import React from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { StyleSheet, View } from 'react-native';
-import SingleSelect from '../components/SingleSelect';
 
 const AddRecordScreen: React.FC = () => {
     const { control } = useForm<FormData>({
