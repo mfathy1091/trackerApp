@@ -1,4 +1,4 @@
-import { useGetCategories } from 'queries/expenseQuery';
+import { useGetAccounts, useGetCategories } from 'queries/expenseQuery';
 import React from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { StyleSheet, View } from 'react-native';
@@ -9,10 +9,12 @@ const AddRecordScreen: React.FC = () => {
         mode: 'all',
         defaultValues: {
             category: '',
+            account: '',
         },
     });
 
     const categoriesQuery = useGetCategories();
+    const accountsQuery = useGetAccounts();
 
     return (
         <View>
@@ -24,6 +26,19 @@ const AddRecordScreen: React.FC = () => {
                         title={'Category'}
                         selectedKey={value}
                         options={categoriesQuery?.data?.data}
+                        fields={{ key: 'slug', text: 'name' }}
+                        onChangeSelection={onChange}
+                    />
+                )}
+            />
+            <Controller
+                control={control}
+                name="account"
+                render={({ field: { onChange, value } }) => (
+                    <SingleSelect
+                        title={'Account'}
+                        selectedKey={value}
+                        options={accountsQuery?.data?.data}
                         fields={{ key: 'slug', text: 'name' }}
                         onChangeSelection={onChange}
                     />

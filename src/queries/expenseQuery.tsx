@@ -1,4 +1,4 @@
-import { apiGetCategories, apiGetTransactions } from '@api/apiClient';
+import { apiGetAccounts, apiGetCategories, apiGetTransactions } from '@api/apiClient';
 import { useQuery } from '@tanstack/react-query';
 
 const useGetTransactions = () => {
@@ -15,4 +15,11 @@ const useGetCategories = () => {
     });
 };
 
-export { useGetCategories, useGetTransactions };
+const useGetAccounts = () => {
+    return useQuery({
+        queryFn: apiGetAccounts,
+        queryKey: ['accounts'],
+    });
+};
+
+export { useGetAccounts, useGetCategories, useGetTransactions };
