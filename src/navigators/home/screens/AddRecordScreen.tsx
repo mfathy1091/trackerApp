@@ -1,3 +1,4 @@
+import CustomTextInput from '@components/CustomTextInput';
 import { useGetAccounts, useGetCategories } from 'queries/expenseQuery';
 import React from 'react';
 import { Controller, useForm } from 'react-hook-form';
@@ -10,6 +11,8 @@ const AddRecordScreen: React.FC = () => {
         defaultValues: {
             category: '',
             account: '',
+            date: '',
+            amount: '',
         },
     });
 
@@ -17,7 +20,26 @@ const AddRecordScreen: React.FC = () => {
     const accountsQuery = useGetAccounts();
 
     return (
-        <View>
+        <View style={styles.container}>
+            <Controller
+                control={control}
+                name={'date'}
+                render={({ field: { onChange, value } }) => (
+                    <CustomTextInput title={'Date'} value={value} onChangeText={onChange} />
+                )}
+            />
+            <Controller
+                control={control}
+                name={'amount'}
+                render={({ field: { onChange, value } }) => (
+                    <CustomTextInput
+                        title={'Amount'}
+                        value={value}
+                        onChangeText={onChange}
+                        keyboardType="decimal-pad"
+                    />
+                )}
+            />
             <Controller
                 control={control}
                 name="category"
@@ -48,6 +70,10 @@ const AddRecordScreen: React.FC = () => {
     );
 };
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+    container: {
+        margin: 15,
+    },
+});
 
 export default AddRecordScreen;
